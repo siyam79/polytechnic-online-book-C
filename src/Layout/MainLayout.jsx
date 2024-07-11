@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom'
 import Header from '../Components/ui/Header'
 import Navbar from '../Components/ui/Navbar'
 import Footer from '../Components/ui/Footer'
+import Banner from '../Components/ui/Banner/Banner'
 
 export default function MainLayout() {
     return (
@@ -12,6 +13,9 @@ export default function MainLayout() {
                 <Header />
             </div>
             <Navbar />
+            <div className='my-2'>
+                <Banner />
+            </div>
             <div className="max-w-7xl mx-auto px-1 py-2 ">
                 <Outlet />
             </div>

@@ -1,11 +1,48 @@
-import Banner from "../Banner/Banner";
+// import Banner from "../Banner/Banner";
 
 
 export default function Home() {
     return (
         <div>
 
-            <Banner />
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            <h1>home </h1>
+            {/* <Banner /> */}
         </div>
     )
 }
