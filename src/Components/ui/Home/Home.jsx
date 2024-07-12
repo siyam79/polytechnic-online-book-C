@@ -1,7 +1,13 @@
 // import Banner from "../Banner/Banner";
 
+import useCurrentUser from "../../Hooks/useCurrentUser"
+
 
 export default function Home() {
+
+   
+
+
     return (
         <div>
 

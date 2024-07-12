@@ -1,10 +1,19 @@
 import React, { useState } from 'react'
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import { FaRegEye, FaRegEyeSlash, FaGoogle } from "react-icons/fa";
+import { toast } from 'react-hot-toast';
+import useAxiosPublic from '../Hooks/useAxiosPublic';
+import LoginIcon from '../Icon/Icon';
+import useAuth from '../Hooks/useAuth';
+
 
 export default function Login() {
+
+  const navigate = useNavigate()
+  const axiosPublic = useAxiosPublic()
+  const { signInUser, googleLogin } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [errorMessage, setErrorMessage] = useState("");
@@ -13,23 +22,39 @@ export default function Login() {
     const email = data.email;
     const password = data.password;
 
-    console.log(data);
-    // signInUser(email, password)
-    //   .then((res) => {
-    //     Swal.fire({
-    //       position: "top-center",
-    //       icon: "success",
-    //       title: "Register Successful",
-    //       showConfirmButton: false,
-    //       timer: 1500,
-    //     });
-    //     navigate("/");
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //     toast("Invalid Email or Password!");
-    //   });
+
+    signInUser(email, password)
+      .then((res) => {
+        toast.success('Login Successfully !')
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+        toast.error("Invalid Email or Password!");
+      });
   };
+
+
+  // google login
+  const hadleGoogleLogin = () => {
+    googleLogin()
+      .then(async (res) => {
+        const loggedUser = res.user;
+        const fullName = loggedUser?.displayName;
+        const email = loggedUser?.email;
+        const profilePhoto = loggedUser?.photoURL;
+
+        await axiosPublic.post("/users", { fullName, email, profilePhoto , role: "user" });
+        toast.success('Login Successfully !')
+        navigate("/");
+      })
+      .catch((error) => {
+        setErrorMessage(error.message);
+        toast.error('Please Try Again!')
+      });
+  };
+
+
 
   const variants = {
     hidden: { opacity: 0, y: 20 },
@@ -49,12 +74,17 @@ export default function Login() {
         {/* social login buttons */}
         <div className="">
           <motion.button
-            // onClick={hadleGoogleLogin}
+            onClick={hadleGoogleLogin}
             whileHover={{ scale: 1.06 }}
-            className="flex justify-center items-center gap-2 shadow-sm border py-3 w-full rounded-lg"
+            className="flex justify-center items-center  w-full"
           >
-            {/* <img src={GOOGLE_ICON} className="w-5" alt="" /> */}
-            <span>Google</span>
+            <button type="button" class="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 me-2 mb-2">
+
+              <LoginIcon />
+
+              Sign in with Google
+            </button>
+
           </motion.button>
         </div>
 
@@ -67,11 +97,10 @@ export default function Login() {
 
         {/* register form */}
         <form onSubmit={handleSubmit(onSubmit)}>
+
           {/* email field */}
           <div className="float-label-input pb-4">
-            <label className="text-[#000] pointer-events-none transition-all duration-200 ease-in-out bg-white">
-              Your Email
-            </label>
+            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Email</label>
             <input
               type="email"
               name="email"
@@ -83,7 +112,7 @@ export default function Login() {
                   message: "Invalid email address",
                 },
               })}
-              className="shadow-sm block w-full bg-transparent focus:outline-none focus:shadow-outline border border-[#ddd] rounded-md py-3 px-4 appearance-none leading-normal"
+              className="shadow-sm text-sm rounded-sm  block w-full p-2.5 border-2 "
             />
             {errors.email && (
               <p className="text-red-500 text-xs mt-1">
@@ -94,9 +123,7 @@ export default function Login() {
 
           {/* password field */}
           <div className="float-label-input pb-4 relative">
-            <label className="text-[#000] pointer-events-none transition-all duration-200 ease-in-out bg-white">
-              Password
-            </label>
+            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
             <input
               type={showPassword ? "text" : "password"}
               name="password"
@@ -108,7 +135,7 @@ export default function Login() {
                   message: "Password must be at least 6 characters",
                 },
               })}
-              className="shadow-sm block w-full bg-transparent focus:outline-none focus:shadow-outline border border-[#ddd] rounded-md py-3 px-4 appearance-none leading-normal"
+              className="shadow-sm text-sm rounded-sm  block w-full p-2.5 border-2 "
             />
             <button
               type="button"
@@ -133,14 +160,14 @@ export default function Login() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             type="submit"
-            className="bg-[#FFBA00] w-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="bg-[#62AB00] w-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           >
             Login
           </motion.button>
 
           {/* redirect login page */}
           <p className="text-gray-400 text-center mt-3">
-            <small>
+            <span className='text-lg '>
               New Account Create Now?{" "}
               <Link
                 className="underline font-semibold text-[#ffc20aa2] hover:text-[#ffc10a]"
@@ -148,7 +175,7 @@ export default function Login() {
               >
                 Register
               </Link>
-            </small>
+            </span>
           </p>
         </form>
       </motion.div>

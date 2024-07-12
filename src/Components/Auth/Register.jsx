@@ -6,9 +6,12 @@ import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import useAuth from '../Hooks/useAuth';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { toast } from 'react-hot-toast';
+import useAxiosPublic from '../Hooks/useAxiosPublic';
+import LoginIcon from '../Icon/Icon';
 
 export default function Register() {
 
+    const axiosPublic = useAxiosPublic()
     const navigate = useNavigate()
     const [showPassword, setShowPassword] = useState(false);
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -21,22 +24,21 @@ export default function Register() {
         const email = data.email;
         const password = data.password;
 
-        const newUser = { fullName, email, password };
+        const newUser = { fullName, email, password, role: "user" };
         console.log(newUser);
-
 
         // create user function
         createUser(email, password)
             .then(async (res) => {
-                
+
                 if (res.user) {
-                    // await axiosPublis.post("/users", newUser);
+                    await axiosPublic.post("/users", newUser);
                     toast.success('Account Create Successfully !')
                     navigate("/");
                 }
+                console.log("user info", re.user);
             })
             .catch((error) => {
-                console.log(error);
                 toast.error("Please Try Again");
             });
     };
@@ -50,21 +52,16 @@ export default function Register() {
                 const fullName = loggedUser?.displayName;
                 const email = loggedUser?.email;
                 const profilePhoto = loggedUser?.photoURL;
-
-                // await axiosPublis.post("/users", { fullName, email, profilePhoto });
-
+            
+                await axiosPublic.post("/users", { fullName, email, profilePhoto, role: "user" });
+                toast.success('Login Successfully !')
                 navigate("/");
             })
             .catch((error) => {
                 setErrorMessage(error.message);
-                console.log(error.message);
+                toast.error('Please Try Again!')
             });
     };
-
-
-
-
-
 
 
     const variants = {
@@ -80,17 +77,19 @@ export default function Register() {
                 variants={variants}
                 className="bg-white m-5 p-8 space-y-5 border rounded-md shadow-md w-[400px] max-w-[400px]"
             >
-                <h2 className="text-center text-3xl font-semibold pb-3">Login</h2>
+                <h2 className="text-center text-3xl font-semibold pb-3">Register</h2>
 
                 {/* social login buttons */}
                 <div className="">
                     <motion.button
                         onClick={hadleGoogleLogin}
                         whileHover={{ scale: 1.06 }}
-                        className="flex justify-center items-center gap-2 shadow-sm border py-3 w-full rounded-lg"
+                        className="flex justify-center items-center  w-full "
                     >
-                        {/* <img src={GOOGLE_ICON} className="w-5" alt="" /> */}
-                        <span>Google</span>
+                        <button type="button" class="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 me-2 mb-2">
+                            <LoginIcon />
+                            Sign in with Google
+                        </button>
                     </motion.button>
                 </div>
 
@@ -106,7 +105,7 @@ export default function Register() {
 
                     {/* full name feild  */}
                     <div className=" pb-4">
-                        <label for="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Name</label>
+                        <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Name</label>
                         <input
                             type="text"
                             name="fullName"
@@ -123,7 +122,7 @@ export default function Register() {
 
                     {/* email field */}
                     <div className="float-label-input pb-4">
-                        <label for="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Email</label>
+                        <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Email</label>
                         <input
                             type="email"
                             name="email"
@@ -146,7 +145,7 @@ export default function Register() {
 
                     {/* password field */}
                     <div className="float-label-input pb-4 relative">
-                        <label for="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                        <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
                         <input
                             type={showPassword ? "text" : "password"}
                             name="password"

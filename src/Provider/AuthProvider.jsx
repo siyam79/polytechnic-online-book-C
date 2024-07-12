@@ -1,7 +1,8 @@
-import { createUserWithEmailAndPassword,GoogleAuthProvider, signOut , signInWithPopup, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword , GoogleAuthProvider, signOut , signInWithPopup, updateProfile, onAuthStateChanged } from "firebase/auth";
 
 import { createContext, useEffect, useState } from "react";
 import { auth } from "../firebase/firebase.config";
+import useAxiosPublic from "../Components/Hooks/useAxiosPublic";
 
 
 export const AuthContext = createContext([]);
@@ -9,6 +10,7 @@ export const AuthContext = createContext([]);
 
 const AuthProvider = ({ children }) => {
 
+  const axiosPublic = useAxiosPublic()
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(true);
  
@@ -42,7 +44,7 @@ const AuthProvider = ({ children }) => {
 
   //   loging  Account 
 
-  const signin = (email, password) => {
+  const signInUser = (email, password) => {
     setLoading(true)
     return signInWithEmailAndPassword(auth, email, password)
   }
@@ -54,38 +56,35 @@ const AuthProvider = ({ children }) => {
 
   }
 
-
   // using Obseverb    ata  user ke  deka suna kore  
 
-  // useEffect(() => {
-  //   const unSubcribe = onAuthStateChanged(auth, (user) => {
-  //     setUser(user);
-  //     if (user) {
-  //       // TODO 
-  //       const userInfo = { email: user.email }
-  //       axiosPublic.post('/jwt', userInfo)
-  //         .then(res => {
-  //           if (res.data.token) {
-  //             localStorage.setItem('access-token', res.data.token)
-  //             setLoading(false)
-  //           }
-  //         })
-  //     }
-  //     else {
-  //       // TODO 
-  //       localStorage.removeItem('access-token')
-  //       setLoading(false)
-  //     }
+  useEffect(() => {
+    const unSubcribe = onAuthStateChanged(auth, (user) => {
+        setUser(user);
+        if (user) {
+            // TODO 
+            const userInfo = { email: user.email }
+            // axiosPublic.post('/jwt', userInfo)
+            .then(res=>{
+               if (res.data.token) {
+                localStorage.setItem('access-token', res.data.token)
+                setLoading(false)
+               }
+            })
+        }
+        else {
+            // TODO 
+            localStorage.removeItem('access-token')
+            setLoading(false)
+        }
+        
 
+    });
+    return () => {
+        unSubcribe()
 
-  //   });
-  //   return () => {
-  //     unSubcribe()
-
-  //   }
-  // }, [axiosPublic]);
-
-  // console.log(user);
+    }
+}, [axiosPublic]);
 
 
 
@@ -93,7 +92,7 @@ const AuthProvider = ({ children }) => {
     googleLogin,
     createUser,
     user,
-    signin,
+    signInUser,
     logOut,
     loading,
     handleUpdateProfile,

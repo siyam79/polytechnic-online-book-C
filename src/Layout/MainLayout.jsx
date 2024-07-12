@@ -9,7 +9,7 @@ export default function MainLayout() {
     return (
         <div>
 
-            <div className="max-w-7xl mx-auto px-1 py-2 ">
+            <div className=" lg:block hidden max-w-7xl mx-auto px-1 py-2 ">
                 <Header />
             </div>
             <Navbar />
