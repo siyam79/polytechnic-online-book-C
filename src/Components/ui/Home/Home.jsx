@@ -27,7 +27,7 @@ export default function Home() {
 
     return (
         <div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 lg:gap-6 md:gap-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 lg:gap-6 md:gap-4 gap-4">
                 {books.slice(0, visibleBooks).map((book, index) => (
                     <BookCard key={index} book={book} />
                 ))}

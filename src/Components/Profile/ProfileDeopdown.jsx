@@ -52,9 +52,7 @@ const ProfileDropdown = () => {
     };
   }, []);
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+ 
 
   return (
     <div ref={dropdownRef} className="relative inline-block text-left z-50">
@@ -71,13 +69,13 @@ const ProfileDropdown = () => {
             {currentUser && user ? (
               currentUser.profilePhoto ? (
                 <img
-                  className="w-10 h-10 rounded-full border-2 border-gray-500"
+                  className="w-10 h-10 rounded-full border-2 border-green-500"
                   src={currentUser.profilePhoto}
                   alt="User Profile"
                 />
               ) : (
                 <img
-                  className="w-10 h-10 rounded-full border-2 border-gray-500"
+                  className="w-10 h-10 rounded-full border-2 border-green-500"
                   src="https://img.freepik.com/premium-photo/blue-circle-with-man-s-head-circle-with-white-background_745528-3499.jpg"
                   alt="User Profile"
                 />
@@ -126,9 +124,7 @@ const ProfileDropdown = () => {
               <DropdownItem icon={<AiOutlineAppstore />} to="/dashboard">
                 Dashboard
               </DropdownItem>
-              <DropdownItem icon={<FiBox />} to="/dashboard/my_order">
-                My Orders
-              </DropdownItem>
+             
               <DropdownItem
                 icon={<LuUserSquare2 />}
                 to="/dashboard/profile"

@@ -3,6 +3,7 @@ import { MdHeadsetMic, MdMenu, MdClose } from "react-icons/md";
 import { Link, useLocation } from 'react-router-dom';
 import ProfileDropdown from '../Profile/ProfileDeopdown';
 
+
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -64,7 +65,7 @@ export default function Navbar() {
                             <button> <MdHeadsetMic size={35} /> </button>
                             <p>Free Support 24/7 <br /> +01-202-555-0181 </p>
                         </div>
-                        <div className='lg:hidden w-10 h-10'>
+                        <div className='lg:hidden'>
                             {/* <img src="https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Student-3-512.png" alt="" /> */}
                             <ProfileDropdown />
                         </div>
@@ -83,7 +84,7 @@ export default function Navbar() {
                     </div>
 
                     {/* Hamburger menu for small screens */}
-                    <div className='flex md:hidden items-center justify-between text-white'>
+                    <div className='flex md:hidden items-center justify-between text-white px-1'>
                         <button onClick={toggleMobileMenu}>
                             {isMobileMenuOpen ? <MdClose size={35} /> : <MdMenu size={35} />}
                         </button>

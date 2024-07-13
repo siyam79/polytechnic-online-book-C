@@ -13,9 +13,9 @@ export default function BookCard({ book }) {
 
     return (
         <>
-            <div className="lg:w-56 lg:h-[400px]  w-full lg:px-1 md:px-2 px-0 bg-white rounded-lg pb-2 cursor-pointer">
-                <img className=' lg:w-[200px] lg:h-[240px] h-[200px] mx-auto rounded ' src="https://worldscientific.com/cms/10.1142/10940/asset/18ee2a3d-dd18-e2a3-bdd1-ee2a3dbdd18e/10940.cover.jpg" alt="" />
-                <div className="uppercase sm:text-xs  font-sans text-blue-600 pt-2 px-1 hover:cursor-pointer">
+            <div className="lg:w-[300px] lg:h-[500px]  w-full lg:px-2 md:px-2 px-1 bg-white rounded-lg pb-2 cursor-pointer">
+                <img className=' lg:w-[250px]  lg:h-[280px] h-[200px]  mx-auto rounded ' src="https://worldscientific.com/cms/10.1142/10940/asset/18ee2a3d-dd18-e2a3-bdd1-ee2a3dbdd18e/10940.cover.jpg" alt="" />
+                <div className="uppercase sm:text-xs  font-sans text-blue-600 pt-2 lg:px-1 px-3  hover:cursor-pointer">
                     <h1
                         className="lg:text-[16px] text-sm truncate uppercase  font-semibold  pt-1
                          hover:cursor-pointer "
@@ -25,19 +25,19 @@ export default function BookCard({ book }) {
                     </h1>
 
                 </div>
-                <div className="font-normal text-gray-700 lg:p-1.5 p-1 lg:text-[16px]  text-xs hover:cursor-pointer px-1">
+                <div className="font-normal text-gray-700 lg:p-1.5 p-1 lg:text-[16px]  text-sm hover:cursor-pointer lg:px-1 px-3">
                     <p className=' border-t border-gray-300 pt-2'>
-                        {truncateDescription(description, 40)}
+                        {truncateDescription(description, 60)}
                     </p>
 
                 </div>
-                <div className=' flex items-center lg:justify-between  gap-3 px-1'>
+                <div className=' flex items-center lg:justify-between  gap-3 lg:px-1 px-3 '>
                     <h1> Semester : </h1>
                     <p> {semester} </p>
                 </div>
-                <div className=' flex items-center lg:justify-between  gap-3 px-1'>
-                    <h1>Pepartment : </h1>
-                    <p> {department} </p>
+                <div className=' flex items-center lg:justify-between  gap-3 lg:px-1 px-3 '>
+                    <h1> Garments Design & Pattern Making Technology</h1>
+                    
                 </div>
             </div>
         </>
