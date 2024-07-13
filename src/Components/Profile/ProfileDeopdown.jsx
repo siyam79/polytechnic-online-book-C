@@ -146,6 +146,7 @@ const ProfileDropdown = () => {
                 <Button
                   onClick={handleLogOut}
                   color="red"
+                  size="sm"
                   className="capitalize flex justify-center items-center text-md gap-2 w-full"
                 >
                   Logout <FaArrowRight />

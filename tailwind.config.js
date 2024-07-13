@@ -4,10 +4,11 @@ module.exports = withMT({
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-     
       container: {
         center: true,
-       
+      },
+      fontFamily: {
+        Josefin: ["Josefin Sans"," sans-serif"],
       },
     },
   },

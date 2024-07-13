@@ -1,0 +1,147 @@
+[
+    {
+      "name": "Introduction to Algorithms",
+      "description": "A course that covers the basic algorithms used in computer science.",
+      "image": "https://drive.google.com/file/d/1QyRJlAr3-cCwjREhPFmUHe_SofQbjeIY/view",
+      "resourcesLink": "https://example.com/linear-algebra-resources",
+      "semester": "5th",
+      "department": "CST",
+      "pobidan": "2016"
+    },
+    {
+      "name": "Linear Algebra",
+      "description": "An introduction to linear algebra and its applications.",
+      "image": "https://drive.google.com/file/d/1QeTIa8B6aLJuz6Kqs3UGZStRYu3hVBVz/view?usp=sharing",
+      "resourcesLink": "https://example.com/linear-algebra-resources",
+      "semester": "4th",
+      "department": "ENT",
+      "pobidan": "MATH201"
+    },
+    {
+      "name": "Organic Chemistry",
+      "description": "A study of the structure, properties, and reactions of organic compounds.",
+      "image": "https://example.com/organic-chemistry.jpg",
+      "resourcesLink": "https://example.com/organic-chemistry-resources",
+      "semester": "3rd",
+      "department": "Civil",
+      "pobidan": "CHEM301"
+    },
+    {
+      "name": "Microeconomics",
+      "description": "An exploration of the economic behavior of individuals and firms.",
+      "image": "https://example.com/microeconomics.jpg",
+      "resourcesLink": "https://example.com/microeconomics-resources",
+      "semester": "1st",
+      "department": "RAC",
+      "pobidan": "ECON101"
+    },
+    {
+      "name": "Modern Art History",
+      "description": "A survey of modern art movements from the 19th century to the present.",
+      "image": "https://example.com/modern-art.jpg",
+      "resourcesLink": "https://example.com/modern-art-resources",
+      "semester": "Fall 2024",
+      "department": "Art History",
+      "pobidan": "ARTH205"
+    },
+    {
+      "name": "Introduction to Psychology",
+      "description": "An overview of psychological theories and practices.",
+      "image": "https://example.com/psychology.jpg",
+      "resourcesLink": "https://example.com/psychology-resources",
+      "semester": "Spring 2024",
+      "department": "Psychology",
+      "pobidan": "PSY101"
+    },
+    {
+      "name": "Physics: Mechanics",
+      "description": "A course on the fundamentals of mechanics in physics.",
+      "image": "https://example.com/physics.jpg",
+      "resourcesLink": "https://example.com/physics-resources",
+      "semester": "Fall 2024",
+      "department": "Physics",
+      "pobidan": "PHYS101"
+    },
+    {
+      "name": "Introduction to Philosophy",
+      "description": "An introduction to the major questions and concepts in philosophy.",
+      "image": "https://example.com/philosophy.jpg",
+      "resourcesLink": "https://example.com/philosophy-resources",
+      "semester": "Spring 2024",
+      "department": "Philosophy",
+      "pobidan": "PHIL101"
+    },
+    {
+      "name": "World History",
+      "description": "A comprehensive overview of global historical events and trends.",
+      "image": "https://example.com/world-history.jpg",
+      "resourcesLink": "https://example.com/world-history-resources",
+      "semester": "Fall 2024",
+      "department": "History",
+      "pobidan": "HIST101"
+    },
+    {
+      "name": "Introduction to Sociology",
+      "description": "An introduction to the study of society and social behavior.",
+      "image": "https://example.com/sociology.jpg",
+      "resourcesLink": "https://example.com/sociology-resources",
+      "semester": "Spring 2024",
+      "department": "Sociology",
+      "pobidan": "SOC101"
+    },
+    {
+      "name": "World History",
+      "description": "A comprehensive overview of global historical events and trends.",
+      "image": "https://example.com/world-history.jpg",
+      "resourcesLink": "https://example.com/world-history-resources",
+      "semester": "Fall 2024",
+      "department": "History",
+      "pobidan": "HIST101"
+    },
+    {
+      "name": "Introduction to Sociology",
+      "description": "An introduction to the study of society and social behavior.",
+      "image": "https://example.com/sociology.jpg",
+      "resourcesLink": "https://example.com/sociology-resources",
+      "semester": "Spring 2024",
+      "department": "Sociology",
+      "pobidan": "SOC101"
+    },
+    {
+      "name": "World History",
+      "description": "A comprehensive overview of global historical events and trends.",
+      "image": "https://example.com/world-history.jpg",
+      "resourcesLink": "https://example.com/world-history-resources",
+      "semester": "Fall 2024",
+      "department": "History",
+      "pobidan": "HIST101"
+    },
+    {
+      "name": "Introduction to Sociology",
+      "description": "An introduction to the study of society and social behavior.",
+      "image": "https://example.com/sociology.jpg",
+      "resourcesLink": "https://example.com/sociology-resources",
+      "semester": "Spring 2024",
+      "department": "Sociology",
+      "pobidan": "SOC101"
+    },
+    {
+      "name": "World History",
+      "description": "A comprehensive overview of global historical events and trends.",
+      "image": "https://example.com/world-history.jpg",
+      "resourcesLink": "https://example.com/world-history-resources",
+      "semester": "Fall 2024",
+      "department": "History",
+      "pobidan": "HIST101"
+    },
+    {
+      "name": "Introduction to Sociology",
+      "description": "An introduction to the study of society and social behavior.",
+      "image": "https://example.com/sociology.jpg",
+      "resourcesLink": "https://example.com/sociology-resources",
+      "semester": "Spring 2024",
+      "department": "Sociology",
+      "pobidan": "SOC101"
+    }
+  ]
+  

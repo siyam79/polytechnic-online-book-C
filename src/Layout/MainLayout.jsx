@@ -7,16 +7,16 @@ import Banner from '../Components/ui/Banner/Banner'
 
 export default function MainLayout() {
     return (
-        <div>
+        <div className='font-Josefin font-normal'>
 
             <div className=" lg:block hidden max-w-7xl mx-auto px-1 py-2 ">
                 <Header />
             </div>
             <Navbar />
             <div className='my-2'>
-                <Banner />
+                {/* <Banner /> */}
             </div>
-            <div className="max-w-7xl mx-auto px-1 py-2 ">
+            <div className="max-w-7xl mx-auto px-1 py-2 bg-gray-100 font-Josefin">
                 <Outlet />
             </div>
             <Footer />
