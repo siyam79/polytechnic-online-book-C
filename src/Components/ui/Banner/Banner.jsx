@@ -44,7 +44,7 @@ export default function Banner() {
 
     return (
         <>
-            <div className="overflow-hidden flex justify-center items-center">
+            <div className="overflow-hidden flex justify-center items-center !w-full ">
                 <div className="carousel w-full object-cover">
                     {images?.map((image, index) => (
                         <div key={index} className={`carousel-item relative w-full flex justify-center items-center flex-1 overflow-hidden ${index === currentImageIndex ? 'visible' : 'hidden'}`}>

@@ -9,6 +9,7 @@ import DashboardLayout from "../Components/Dashboard/DashboardLayout/DashboardLa
 import DashboardHome from "../Components/Dashboard/DashboardHome/DashboardHome";
 import Profile from "../Components/Dashboard/Profile/Profile";
 import AddProduct from "../Components/Dashboard/AddProduct/AddProduct";
+import Contact from "../Components/ui/Contact/Contact";
 
 const Router = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const Router = createBrowserRouter([
             {
                 path: "/all-book",
                 element: <AllBook />
+            },
+            {
+                path: "/contact",
+                element: <Contact />
             },
 
         ]

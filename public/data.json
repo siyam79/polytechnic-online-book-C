@@ -5,7 +5,7 @@
       "image": "https://drive.google.com/file/d/1QyRJlAr3-cCwjREhPFmUHe_SofQbjeIY/view",
       "resourcesLink": "https://example.com/linear-algebra-resources",
       "semester": "5th",
-      "department": "CST",
+      "department": "Computer Science & Technology",
       "pobidan": "2016"
     },
     {
@@ -14,7 +14,7 @@
       "image": "https://drive.google.com/file/d/1QeTIa8B6aLJuz6Kqs3UGZStRYu3hVBVz/view?usp=sharing",
       "resourcesLink": "https://example.com/linear-algebra-resources",
       "semester": "4th",
-      "department": "ENT",
+      "department": "Civil Technology",
       "pobidan": "MATH201"
     },
     {
@@ -135,7 +135,7 @@
       "pobidan": "HIST101"
     },
     {
-      "name": "Introduction to Sociology",
+      "name": "Introduction to Sociologyllllll",
       "description": "An introduction to the study of society and social behavior.",
       "image": "https://example.com/sociology.jpg",
       "resourcesLink": "https://example.com/sociology-resources",

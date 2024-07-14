@@ -36,8 +36,11 @@ export default function BookCard({ book }) {
                     <p> {semester} </p>
                 </div>
                 <div className=' flex items-center lg:justify-between  gap-3 lg:px-1 px-3 '>
-                    <h1> Garments Design & Pattern Making Technology</h1>
+                    <h1> {department} </h1>
                     
+                </div>
+                <div>
+                    <p> Resource </p>
                 </div>
             </div>
         </>
